@@ -6,5 +6,7 @@ MANIFEST			This list of files
 README.md
 t/00-report-prereqs.t
 t/basic.t
+t/lib/Thing.pm
+t/scr.pl
 xt/manifest.t
 xt/pod.t
