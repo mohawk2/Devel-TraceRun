@@ -1,6 +1,7 @@
 language: perl
 jobs:
   include:
+    - perl: 5.8.9
     - perl: 5.16
     - perl: 5.26
       env: AUTHOR_TESTING=1 RELEASE_TESTING=1

@@ -1,12 +1,13 @@
 use Test::More;
 use File::Spec::Functions;
 
+my $first_ret = $] < 5.016000 ? 'undef' : '';
 my $tdir = catdir qw(t lib);
 my $tfile = catfile qw(t scr.pl);
 
 my $expected = <<EOF;
 main::($tfile:1)()
-return()
+return($first_ret)
 Thing::func(ARRAY)
   Thing::func2()
   return()

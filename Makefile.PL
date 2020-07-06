@@ -8,7 +8,7 @@ WriteMakefile(
   AUTHOR           => q{Ed J <etj@cpan.org>},
   VERSION_FROM     => 'lib/Devel/TraceRun.pm',
   LICENSE          => 'artistic_2',
-  MIN_PERL_VERSION => "5.016001",
+  MIN_PERL_VERSION => "5.008008",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => '6.63_03',
   },
