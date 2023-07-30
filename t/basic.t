@@ -4,12 +4,22 @@ use File::Spec::Functions;
 my $tdir = catdir qw(t lib);
 my $tfile = catfile qw(t scr.pl);
 my $first_ret = $] < 5.016000 ? 'undef' : '';
-my $initial = $] < 5.028000 ? '' : <<EOF;
+my $initial = $] < 5.028000 ? ''
+  : $] < 5.039001 ? <<EOF
 main::($tfile:0)(Devel::Tra)
 return()
 EOF
-my $first_block = $] < 5.028000 ? '' : <<EOF;
+  : <<EOF;
+UNIVERSAL::import(Devel::Tra)
+return()
+EOF
+my $first_block = $] < 5.028000 ? ''
+  : $] < 5.039001 ? <<EOF
   main::($tfile:1)(Thing)
+  return($first_ret)
+EOF
+  : <<EOF;
+  UNIVERSAL::import(Thing)
   return($first_ret)
 EOF
 
